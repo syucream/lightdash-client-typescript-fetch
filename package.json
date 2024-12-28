@@ -1,0 +1,39 @@
+{
+  "name": "@syucream/lightdash-client-typescript-fetch",
+  "version": "0.0.1",
+  "description": "TypeScript client for Lightdash API generated using openapi-fetch",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate": "npm run generate:client",
+    "generate:client": "bash ./scripts/generate-client.sh",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syucream/lightdash-client-typescript-fetch.git"
+  },
+  "keywords": [
+    "lightdash",
+    "api",
+    "client",
+    "typescript",
+    "openapi"
+  ],
+  "author": "syucream",
+  "license": "MIT",
+  "dependencies": {
+    "openapi-fetch": "^0.9.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "openapi-typescript": "^6.7.4"
+  }
+} 
