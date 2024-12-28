@@ -47,6 +47,33 @@ if (error) {
    npm run build
    ```
 
+### Code Quality
+
+The project uses ESLint and Prettier for code quality and formatting:
+
+- `npm run lint` - Check code style and potential issues
+- `npm run fix` - Automatically fix code style issues
+
+Individual commands are also available:
+- `npm run lint:eslint` - Run ESLint checks only
+- `npm run lint:prettier` - Run Prettier checks only
+- `npm run fix:eslint` - Run ESLint auto-fix
+- `npm run fix:prettier` - Run Prettier auto-fix
+
+### Continuous Integration
+
+The project uses GitHub Actions for CI:
+
+- Pull Request Checks:
+  - Runs linting on all pull requests
+  - Ensures code quality before merging
+
+- Main Branch CI:
+  - Runs on merges to main
+  - Generates client code from the latest OpenAPI spec
+  - Builds the project
+  - Uploads build artifacts
+
 ## Publishing
 
 This package is published to GitHub Packages. To publish a new version:
