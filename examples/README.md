@@ -1,41 +1,43 @@
 # Lightdash Client Example
 
-このサンプルプロジェクトは、`@syucream/lightdash-client-typescript-fetch`を使用してLightdash APIにアクセスする方法を示しています。
+This sample project demonstrates how to access the Lightdash API using `@syucream/lightdash-client-typescript-fetch`.
 
-## 機能
+## Features
 
-このサンプルでは、以下の機能を実装しています：
+This example implements the following features:
 
-- チャートの履歴情報の取得（過去30日間）
-- エラーハンドリング
-- 型安全なAPIクライアントの使用方法
+- Retrieving project spaces information
+- Error handling
+- Usage of type-safe API client
 
-## セットアップ
+## Setup
 
-1. GitHub Packagesの認証設定:
+1. Configure GitHub Packages authentication:
    ```bash
-   # GitHub Personal Access Token を環境変数に設定
-   # トークンには`read:packages`スコープが必要です
+   # Set GitHub Personal Access Token as environment variable
+   # Token needs 'read:packages' scope
    export GITHUB_TOKEN=your_github_personal_access_token
    ```
 
-2. 依存関係のインストール:
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. 環境設定:
-   - `index.ts`の`CHART_UUID`を実際のチャートUUIDに変更してください
-   - 必要に応じて`client`作成時のベースURLを変更してください
+3. Environment configuration:
+   - Copy `.env.sample` to `.env`
+   - Set your `LIGHTDASH_API_KEY` in `.env`
+   - Set your `PROJECT_UUID` in `.env`
+   - Optionally modify `BASE_URL` if you're not using the default Lightdash cloud instance
 
-4. 実行:
+4. Run:
    ```bash
    npm start
    ```
 
-## 注意事項
+## Notes
 
-- このサンプルでは認証が不要なAPIエンドポイントを使用しています
-- 実際の環境では、適切なチャートUUIDを指定する必要があります
-- レスポンスは完全に型付けされており、TypeScriptの恩恵を受けることができます
-- GitHub Packagesからパッケージを取得するには、適切な認証設定が必要です 
+- This example requires authentication using a Lightdash API key
+- In a production environment, you need to specify the appropriate project UUID
+- Responses are fully typed, allowing you to leverage TypeScript benefits
+- Proper authentication configuration is required to fetch packages from GitHub Packages
