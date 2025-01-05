@@ -1,9 +1,16 @@
 {
   "name": "@syucream/lightdash-client-typescript-fetch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "TypeScript client for Lightdash API generated using openapi-fetch",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
   "scripts": {
     "build": "tsc",
     "generate": "npm run generate:client",

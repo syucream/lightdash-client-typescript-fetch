@@ -2,19 +2,19 @@
   "name": "lightdash-client-example",
   "version": "1.0.0",
   "description": "Example usage of @syucream/lightdash-client-typescript-fetch",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "tsx index.ts",
+    "link-local": "cd ../ && npm run build && npm link && cd examples && npm link @syucream/lightdash-client-typescript-fetch",
+    "dev": "npm run link-local && npm run start"
   },
   "dependencies": {
     "@syucream/lightdash-client-typescript-fetch": "^0.0.2-202501050102",
-    "dotenv": "^16.0.3",
-    "form-data": "^4.0.1",
-    "node-fetch": "^2.6.9"
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.6.12",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }
 }
