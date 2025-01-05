@@ -1,13 +1,5 @@
 import 'dotenv/config';
-import fetch, { Request, Headers } from 'node-fetch';
-import FormData from 'form-data';
-
-global.fetch = fetch as any;
-global.Request = Request as any;
-global.Headers = Headers as any;
-global.FormData = FormData as any;
-
-import createLightdashClient from '@syucream/lightdash-client-typescript-fetch';
+import { createLightdashClient } from '@syucream/lightdash-client-typescript-fetch';
 
 const LIGHTDASH_API_KEY = process.env.LIGHTDASH_API_KEY;
 const PROJECT_UUID = process.env.PROJECT_UUID;
