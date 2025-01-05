@@ -43,6 +43,8 @@ jobs:
           npm version $TAG --no-git-tag-version
 
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: |
+          echo "registry=https://registry.npmjs.org/" > .npmrc
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }} 
