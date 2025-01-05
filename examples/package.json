@@ -7,7 +7,7 @@
     "start": "ts-node index.ts"
   },
   "dependencies": {
-    "@syucream/lightdash-client-typescript-fetch": "^0.0.1-202501010000",
+    "@syucream/lightdash-client-typescript-fetch": "^0.0.2-202501050102",
     "dotenv": "^16.0.3",
     "form-data": "^4.0.1",
     "node-fetch": "^2.6.9"
