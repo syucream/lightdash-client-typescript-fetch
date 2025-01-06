@@ -5,13 +5,13 @@ A TypeScript client for the Lightdash API, generated from the official OpenAPI s
 ## Installation
 
 ```bash
-npm install @syucream/lightdash-client-typescript-fetch
+npm install lightdash-client-typescript-fetch
 ```
 
 ## Usage
 
 ```typescript
-import createLightdashClient from '@syucream/lightdash-client-typescript-fetch';
+import createLightdashClient from 'lightdash-client-typescript-fetch';
 
 // Create a client instance
 const client = createLightdashClient('https://your-lightdash-instance.com');
