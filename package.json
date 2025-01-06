@@ -1,5 +1,5 @@
 {
-  "name": "@syucream/lightdash-client-typescript-fetch",
+  "name": "lightdash-client-typescript-fetch",
   "version": "0.0.3",
   "description": "TypeScript client for Lightdash API generated using openapi-fetch",
   "type": "module",
