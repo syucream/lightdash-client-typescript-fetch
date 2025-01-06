@@ -10,7 +10,7 @@
     "dev": "npm run link-local && npm run start"
   },
   "dependencies": {
-    "lightdash-client-typescript-fetch": "^0.0.2-202501050102",
+    "lightdash-client-typescript-fetch": "^0.0.3-202501060800",
     "dotenv": "^16.0.3"
   },
   "devDependencies": {

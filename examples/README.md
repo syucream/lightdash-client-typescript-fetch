@@ -1,6 +1,6 @@
 # Lightdash Client Example
 
-This sample project demonstrates how to access the Lightdash API using `@syucream/lightdash-client-typescript-fetch`.
+This sample project demonstrates how to access the Lightdash API using `lightdash-client-typescript-fetch`.
 
 ## Features
 
