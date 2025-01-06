@@ -26,7 +26,6 @@ jobs:
           node-version: '20.x'
           cache: 'npm'
           registry-url: 'https://registry.npmjs.org'
-          scope: '@syucream'
 
       - name: Install dependencies
         run: npm ci
@@ -42,7 +41,7 @@ jobs:
           TAG=${GITHUB_REF#refs/tags/v}
           npm version $TAG --no-git-tag-version
 
-      - name: Publish to GitHub Packages
+      - name: Publish to npm registry
         run: |
           echo "registry=https://registry.npmjs.org/" > .npmrc
           npm publish --access public
