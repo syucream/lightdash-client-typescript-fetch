@@ -53,11 +53,26 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               tag_name: '${{ steps.tag.outputs.name }}',
-              name: 'Release ${{ steps.tag.outputs.name }}',
+              name: '${{ steps.tag.outputs.name }}',
               body: 'Automated release created by GitHub Actions on ' + new Date().toISOString(),
               draft: false,
               prerelease: false
             })
 
+      - name: Trigger Publish Workflow
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'publish.yml',
+              ref: 'main',
+              inputs: {
+                tag_name: '${{ steps.tag.outputs.name }}'
+              }
+            })
+
       - name: Output created tag and release
-        run: echo "Created tag and release ${{ steps.tag.outputs.name }}"
+        run: echo "Created tag and release ${{ steps.tag.outputs.name }} and triggered publish workflow"

@@ -4,7 +4,12 @@ on:
   push:
     tags:
       - 'v*-*'
-
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'Tag name (format: vx.y.z-yyyymmddhhmm)'
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -12,9 +17,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set TAG environment variable
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "TAG=${{ github.event.inputs.tag_name }}" >> $GITHUB_ENV
+          else
+            echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+          fi
+
       - name: Validate tag format
         run: |
-          TAG=${GITHUB_REF#refs/tags/}
           if ! [[ $TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+-[0-9]{12}$ ]]; then
             echo "Invalid tag format. Expected format: vx.y.z-yyyymmddhhmm"
             exit 1
@@ -38,8 +50,8 @@ jobs:
 
       - name: Update package version
         run: |
-          TAG=${GITHUB_REF#refs/tags/v}
-          npm version $TAG --no-git-tag-version
+          VERSION=${TAG#v}
+          npm version $VERSION --no-git-tag-version
 
       - name: Publish to npm registry
         run: |
