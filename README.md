@@ -1,4 +1,6 @@
-# Lightdash TypeScript Client
+# Lightdash TypeScript Client based on openapi-fetch
+
+[![npm version](https://badge.fury.io/js/lightdash-client-typescript-fetch.svg)](https://badge.fury.io/js/lightdash-client-typescript-fetch)
 
 A TypeScript client for the Lightdash API, generated from the official OpenAPI specification using [openapi-fetch](https://github.com/openapi-ts/openapi-typescript).
 
