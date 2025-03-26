@@ -1,6 +1,6 @@
 {
   "name": "lightdash-client-typescript-fetch",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "TypeScript client for Lightdash API generated using openapi-fetch",
   "type": "module",
   "main": "./dist/index.js",
